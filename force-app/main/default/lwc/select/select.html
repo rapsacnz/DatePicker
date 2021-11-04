@@ -1,0 +1,13 @@
+<template>
+
+  <div class="slds-select_container">
+    <select disabled={disabled}
+            required={required}
+            class="slds-select select-element" onchange={handleSelectChange}>
+      <template for:each={_options} for:item="option">
+        <option key={option.value} selected={option.selected} value={option.value}>{option.label}</option>
+      </template>
+    </select>
+  </div>
+
+</template>

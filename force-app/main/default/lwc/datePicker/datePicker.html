@@ -1,0 +1,188 @@
+<template>
+
+  <!-- <div class={outerDivClass} >
+    <label class={labelClass}>{label}</label>
+    <div class="date-input-control slds-form-element__control slds-input-has-icon slds-input-has-icon_right " >
+
+      <c-input-date style-class="slds-input " value={value} format={formatSpecifier} ondatechange={handleManualInput} onfocus={handleInputFocus}></c-input-date>
+
+      <button onclick={handleClearDate} class="clear-button slds-input__icon slds-input__icon_right slds-button slds-button_icon slds-hide">
+        <lightning-icon icon-name="utility:clear" size="x-small" class="slds-button__icon" ></lightning-icon>
+        <span class="slds-assistive-text">Clear</span>
+      </button>
+
+    </div>
+    <div if:true={_error} id="error-message" class="slds-form-element__help">{_errorMessage}</div>
+  </div>
+
+
+  <div if:true={_open} class="grid datepicker-dropdown slds-datepicker slds-dropdown slds-dropdown_left picker-display-table clear-user-agent-styles " >
+
+    <div class="slds-datepicker__filter slds-grid ">
+      <div class="slds-datepicker__filter_month slds-grid slds-grid_align-spread slds-grow">
+        <div class="slds-align-middle">
+          <a onclick={goToPreviousMonth} href="javascript:void(0);" class="slds-button slds-button_icon-container no-focus">
+            <lightning-icon icon-name="utility:left" size="small" class="slds-button-icon slds-button-icon_small slds-m-top_xx-small no-focus" ></lightning-icon>
+          </a>
+        </div>
+
+        <h2 id="month" class="slds-align-middle" aria-live="assertive" aria-atomic="true">{monthName}</h2>
+        
+        <div class="slds-align-middle">
+          <a onclick={goToNextMonth} href="javascript:void(0);" class="slds-button slds-button-icon-container no-focus">
+            <lightning-icon icon-name="utility:right" size="small" class="slds-button-icon slds-button-icon_small slds-m-top_xx-small no-focus" ></lightning-icon>
+          </a>
+        </div>
+      </div>
+      <div class="slds-shrink-none">
+      </div>
+    </div>
+
+    <table class="maintable datepicker__month picker-table datepicker-table" role="grid" aria-labelledby="month" onclick={handleTableCellClick}>
+      <thead>
+        <tr id="weekdays">
+          
+          <template for:each={_namesOfWeekdays} for:item="day">
+            <th key={day.key} data-key={day.key} for:index={day.index} scope="col" class="dayOfWeek">
+              <abbr title={day.shortName}>{day.shortName}</abbr>
+            </th>
+          </template>
+
+        </tr>
+      </thead>
+      <tbody>
+        <template for:each={dayGrid} for:item="week">
+
+          <tr class={week.class} key={week.weekKey}>
+            <template for:each={week.days} for:item="day">
+            <td key={day.key} data-key={day.key} role="gridcell" aria-selected={day.ariaSelected} aria-disabled={day.ariaDisabled} >
+             <span class={day.tdClass}>{day.label}</span>
+            </td>
+            </template>
+          </tr>
+
+        </template>
+
+        <tr if:true={showTodayHyperlink}>
+          <td colspan="7" role="gridcell">
+            <a onclick={goToToday} href="javascript:void(0);" class="slds-show_inline-block slds-p-bottom_x-small">Today</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+
+
+
+
+
+<!-- take 2: -->
+<!-- take 2: -->
+<!-- take 2: -->
+<!-- take 2: -->
+<!-- take 2: -->
+
+
+  <div class={outerDivClass2}>
+    
+    <label class="slds-form-element__label" for="date-input-id-default">{label}</label>
+    
+    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+      
+      <c-input-date style-class="slds-input " value={value} format={formatSpecifier} ondatechange={handleManualInput} onfocus={handleInputFocus}></c-input-date>
+      
+      <button onclick={handleClearDate} class="clear-button slds-input__icon slds-input__icon_right slds-button slds-button_icon slds-hide">
+        <lightning-icon icon-name="utility:clear" size="x-small" class="slds-button__icon" ></lightning-icon>
+        <span class="slds-assistive-text">Clear</span>
+      </button>
+
+      <lightning-icon icon-name="utility:event" size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" ></lightning-icon>
+
+
+      <!-- <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Select a date">
+        <svg class="slds-button__icon" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#event"></use>
+        </svg>
+        <span class="slds-assistive-text">Select a date</span>
+      </button> -->
+    </div>
+  
+    <div if:true={_open} class="slds-datepicker slds-dropdown slds-dropdown_left 
+                                datepicker-dropdown picker-display-table clear-user-agent-styles " 
+                          role="dialog" onmouseover={handleMouseOver} onmouseout={handleMouseOut}>
+      <div class="slds-datepicker__filter slds-grid">
+
+        <div class="slds-datepicker__filter_month slds-grid slds-grid_align-spread slds-grow">
+          <div class="slds-align-middle">
+            <a onclick={goToPreviousMonth} href="javascript:void(0);" class="slds-button slds-button_icon-container no-focus">
+              <lightning-icon icon-name="utility:left" size="small" class="slds-button-icon slds-button-icon_small slds-m-top_xx-small no-focus" ></lightning-icon>
+            </a>
+          </div>
+
+          <h2 class="slds-align-middle current-month" aria-live="assertive" aria-atomic="true">{monthName}</h2>
+          
+          <div class="slds-align-middle">
+            <a onclick={goToNextMonth} href="javascript:void(0);" class="slds-button slds-button-icon-container no-focus">
+              <lightning-icon icon-name="utility:right" size="small" class="slds-button-icon slds-button-icon_small slds-m-top_xx-small no-focus" ></lightning-icon>
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="slds-shrink-none">
+          <c:SimpleSelect aura:id="yearSelect" value="{!v.year}" options="{!v.options}" selectChange="{!c.handleYearChange}" />
+        </div> -->
+        <!-- onselect={handleYearChange}  -->
+        <div class="slds-shrink-none">
+          <label class="slds-assistive-text" for="defaulPicker_select">Pick a Year</label>
+          <div class="slds-select_container">
+            <select class="slds-select" id="defaulPicker_select" onchange={handleYearChange}>
+              <template for:each={years} for:item="year">
+                <option key={year.value} selected={year.selected}>{year.label}</option>
+              </template>
+            </select>
+          </div>
+        </div>
+
+      </div>
+      <!-- aria-labelledby="defaulPicker-month" aria-multiselectable="true"  -->
+
+      <table class="maintable datepicker__month picker-table datepicker-table" role="grid" aria-labelledby="month" onclick={handleTableCellClick}>
+
+        <thead>
+          <tr id="weekdays1">
+            
+            <template for:each={_namesOfWeekdays} for:item="day">
+              <th key={day.key} data-key={day.key} for:index={day.index} scope="col" class="dayOfWeek">
+                <abbr title={day.shortName}>{day.shortName}</abbr>
+              </th>
+            </template>
+  
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={dayGrid} for:item="week">
+  
+            <tr class={week.class} key={week.weekKey}>
+              <template for:each={week.days} for:item="day">
+                <!-- class="normal-td picker-table datecell" -->
+              <td key={day.key} data-key={day.key} role="gridcell" class={day.tdClass}
+                  aria-selected={day.ariaSelected} aria-disabled={day.ariaDisabled} >
+               <span tabindex="-1" role="button" class="slds-day">{day.label}</span>
+              </td>
+              </template>
+            </tr>
+  
+          </template>
+  
+          <tr if:true={showTodayHyperlink}>
+            <td colspan="7" role="gridcell">
+              <a onclick={goToToday} href="javascript:void(0);" class="slds-show_inline-block slds-p-bottom_x-small">Today</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="slds-button slds-align_absolute-center slds-text-link" onclick={goToToday}>Today</button>
+    </div>
+	
+  </div>
+</template>

@@ -1,0 +1,99 @@
+thead {
+  background-color: #f0f1f2;
+  border-bottom: 1px solid #f0f1f2;
+}
+
+.picker-table th {
+  padding: 0.3rem;
+}
+
+.picker-table td {
+  padding: 0.3rem;
+}
+.picker-display-table {
+  display: table;
+}
+.picker-display-table.slds-hide {
+  display: none;
+}
+
+.slds-transition-hide {
+  transition: opacity 0.5s;
+}
+
+a.no-focus:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.slds-datepicker .spear-datepicker-small th {
+  padding: 0.3rem !important;
+}
+
+.slds-scope .slds-datepicker .spear-datepicker-small td > .slds-day {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  min-width: none !important;
+  line-height: 1.5rem !important;
+}
+
+.clear-user-agent-styles table,
+.clear-user-agent-styles thead,
+.clear-user-agent-styles tbody,
+.clear-user-agent-styles tfoot,
+.clear-user-agent-styles tr,
+.clear-user-agent-styles th,
+.clear-user-agent-styles td {
+  font-weight: inherit;
+}
+
+.datepicker-table {
+  border-color: rgb(128, 128, 128);
+  border-collapse: collapse;
+  box-sizing: border-box;
+  font-family: "Salesforce Sans", Arial, sans-serif;
+  height: auto;
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.datepicker-table table {
+  color: rgb(22, 50, 92);
+  display: table;
+  line-height: 18px;
+  width: 100%;
+}
+
+.datepicker-table thead tr {
+  border-bottom-color: rgb(240, 241, 242);
+  display: table-row;
+  font-size: 12px;
+  line-height: 18px;
+  vertical-align: middle;
+  width: auto;
+}
+
+.datepicker-table tbody {
+  border-collapse: collapse;
+  box-sizing: border-box;
+  color: rgb(22, 50, 92);
+  display: table-row-group;
+  line-height: 18px;
+  vertical-align: middle;
+  width: auto;
+}
+
+.datepicker-table tbody tr {
+  display: table-row;
+}
+
+.datepicker-table tbody tr td {
+  display: table-cell;
+  line-height: 18px;
+  padding: 0.25rem;
+  text-align: center;
+  vertical-align: middle;
+  width: auto;
+  border: none;
+}
