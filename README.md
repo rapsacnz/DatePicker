@@ -3,7 +3,6 @@
 A LWC version of the Older DatePickerAura. 
 
 # How it looks:
-[![ordered listgroup gif][1]][1]
 
 ## How to set up the project (advice from Salesforce)
 
